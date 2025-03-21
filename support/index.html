@@ -7,23 +7,26 @@
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1e1e1e;
             color: #fff;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #111;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             color: #ff4757;
+            animation: fadeIn 2s ease-in-out;
         }
 
         nav {
@@ -35,6 +38,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
@@ -42,12 +46,13 @@
         }
 
         .support {
-            padding: 50px 20px;
+            padding: 100px 20px;
             text-align: center;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .support h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
@@ -66,38 +71,53 @@
         .support form input,
         .support form textarea {
             width: 100%;
-            padding: 10px;
+            padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #444;
             border-radius: 5px;
             background-color: #2f3542;
             color: #fff;
+            transition: border-color 0.3s ease;
+        }
+
+        .support form input:focus,
+        .support form textarea:focus {
+            border-color: #ff4757;
         }
 
         .support form button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #ff4757;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .support form button:hover {
             background-color: #ff6b81;
+            transform: scale(1.05);
         }
 
         footer {
             background-color: #111;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
             margin: 0;
             font-size: 0.9em;
             color: #888;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -124,7 +144,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2023 Lucky Executor. All rights reserved.</p>
+        <p>&copy; 2025 Lucky Executor. All rights reserved.</p>
     </footer>
 
     <script>
