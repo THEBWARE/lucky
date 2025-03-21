@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Executor - Lucky</title>
+    <title>Lucky Executor - Roblox Executor</title>
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #1e1e1e;
             color: #fff;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #111;
-            padding: 10px 0;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 3em;
             color: #ff4757;
+            animation: fadeIn 2s ease-in-out;
         }
 
         nav {
@@ -35,6 +38,7 @@
             text-decoration: none;
             margin: 0 15px;
             font-size: 1.2em;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
@@ -43,65 +47,99 @@
 
         .hero {
             text-align: center;
-            padding: 100px 20px;
-            background-color: #2f3542;
+            padding: 150px 20px;
+            background: linear-gradient(135deg, #2f3542, #1e1e1e);
+            animation: slideIn 1.5s ease-in-out;
         }
 
         .hero h2 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
+            animation: fadeIn 2.5s ease-in-out;
         }
 
         .hero p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
             background-color: #ff4757;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeIn 3.5s ease-in-out;
         }
 
         .btn:hover {
             background-color: #ff6b81;
+            transform: scale(1.1);
         }
 
         .features {
-            padding: 50px 20px;
+            padding: 100px 20px;
             text-align: center;
             background-color: #1e1e1e;
         }
 
         .features h2 {
-            font-size: 2em;
-            margin-bottom: 30px;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            animation: fadeIn 2s ease-in-out;
         }
 
         .features ul {
             list-style: none;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .features ul li {
             font-size: 1.2em;
             margin-bottom: 10px;
+            background-color: #2f3542;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .features ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         footer {
             background-color: #111;
             padding: 20px 0;
             text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
         }
 
         footer p {
             margin: 0;
             font-size: 0.9em;
             color: #888;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
     </style>
 </head>
@@ -131,7 +169,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025Lucky Executor. All rights reserved.</p>
+        <p>&copy; 2025 Lucky Executor. All rights reserved.</p>
     </footer>
 
     <script>
