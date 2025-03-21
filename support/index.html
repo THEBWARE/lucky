@@ -105,7 +105,7 @@
     <header>
         <h1>Lucky Executor</h1>
         <nav>
-            <a href="index.html">Home</a>
+            <a href="../index.html">Home</a>
             <a href="support.html">Support</a>
         </nav>
     </header>
@@ -114,13 +114,10 @@
         <h2>Support</h2>
         <form id="supportForm">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="text" id="name" name="name" required placeholder="Enter your name">
 
             <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe your issue"></textarea>
 
             <button type="submit">Submit</button>
         </form>
@@ -135,25 +132,29 @@
             e.preventDefault();
 
             // Fetch the webhook URL from support.json
-            fetch('support.json')
+            fetch('../support.json')
                 .then(response => response.json())
                 .then(data => {
                     const webhookUrl = data.webhookUrl;
 
-                    // Prepare the form data
-                    const formData = {
-                        name: document.getElementById('name').value,
-                        email: document.getElementById('email').value,
-                        message: document.getElementById('message').value
-                    };
+                    // Get form data
+                    const name = document.getElementById('name').value;
+                    const message = document.getElementById('message').value;
 
-                    // Send the data to the webhook
+                    // Create the thread name and first message
+                    const threadName = `Support Request from ${name}`;
+                    const threadMessage = `**New Support Request**\n\n**Name:** ${name}\n**Message:** ${message}`;
+
+                    // Send the data to the Discord webhook
                     fetch(webhookUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(formData)
+                        body: JSON.stringify({
+                            content: threadMessage,
+                            thread_name: threadName // This creates a thread with the specified name
+                        })
                     })
                     .then(response => {
                         if (response.ok) {
