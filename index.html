@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Executor - Lucky</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        header {
+            background-color: #111;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #ff4757;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #ff4757;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: #2f3542;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff4757;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+
+        .btn:hover {
+            background-color: #ff6b81;
+        }
+
+        .features {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #1e1e1e;
+        }
+
+        .features h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features ul li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lucky Executor</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="support.html">Support</a>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Roblox Executor - Lucky</h2>
+        <p>Unlock the full potential of Roblox with Lucky Executor. Execute scripts with ease and take your gaming experience to the next level.</p>
+        <a href="#" id="downloadLink" class="btn">Download Now</a>
+    </section>
+
+    <section id="features" class="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Easy-to-use interface</li>
+            <li>Supports the latest Roblox updates</li>
+            <li>Fast and reliable script execution</li>
+            <li>Safe and secure</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Lucky Executor. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Fetch the download link from index.json
+        fetch('index.json')
+            .then(response => response.json())
+            .then(data => {
+                const downloadLink = document.getElementById('downloadLink');
+                downloadLink.href = data.downloadLink;
+            })
+            .catch(error => console.error('Error fetching download link:', error));
+    </script>
+</body>
+</html>
