@@ -162,19 +162,17 @@
                     const name = document.getElementById('name').value;
                     const message = document.getElementById('message').value;
 
-                    // Create the thread name and first message
-                    const threadName = `Support Request from ${name}`;
-                    const threadMessage = `**New Support Request**\n\n**Name:** ${name}\n**Message:** ${message}`;
+                    // Create the message content
+                    const discordMessage = `**New Support Request**\n\n**Name:** ${name}\n**Message:** ${message}`;
 
-                    // Send the data to the Discord webhook
+                    // Send the message to the Discord webhook
                     fetch(webhookUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
                         body: JSON.stringify({
-                            content: threadMessage,
-                            thread_name: threadName // This creates a thread with the specified name
+                            content: discordMessage
                         })
                     })
                     .then(response => {
